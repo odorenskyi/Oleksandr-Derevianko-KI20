@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1616075902 source:c:\code\c++\oleksandr-derevianko-ki20\lab08\prj\testdriver\main.cpp
+	<iostream>
+	<cmath>
+	<..\ModulesDerevianko\ModulesDerevianko.h>
+
+1616074558 c:\code\c++\oleksandr-derevianko-ki20\lab08\prj\modulesderevianko\modulesderevianko.h
+
