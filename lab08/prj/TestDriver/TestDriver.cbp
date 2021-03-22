@@ -13,7 +13,11 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="../ModulesDerevianko" />
 				</Compiler>
+				<Linker>
+					<Add library="../ModulesDerevianko/bin/Debug/libModulesDerevianko.a" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/TestDriver" prefix_auto="1" extension_auto="1" />

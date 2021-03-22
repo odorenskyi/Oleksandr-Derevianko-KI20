@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+
 #include <..\ModulesDerevianko\ModulesDerevianko.h>
 
 using namespace std;
@@ -9,7 +10,6 @@ int main()
     double x[] = {1.0, 0.0, -1.0, 2.0, -2.0, 0.0, 0.0, 1.0, -2.0, 99.3};
     double y[] = {1.0, 0.0, -1.0, -1.0, 3.0, -2.0, 1.0, 0.0, 0.0, -99.9};
     double z[] = {1.0, 0.0, -1.0, 0.0, 0.0, 1.0, -2.0, -2.0, 1.0, -0.32};
-
     double expected[] ={4.1581, 0.0, -2.47515, -4.89898, 0.181444, -0.125, 1.41421, 0.0, 0.0, -0.243897};
 
     for (int i = 0; i < 10; i++) {
@@ -21,6 +21,8 @@ int main()
             cout << " failed" << endl;
         }
     }
+
+    system("pause");
 
     return 0;
 }
