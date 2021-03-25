@@ -6,37 +6,36 @@ using namespace std;
 
 int main()
 {
-    SetConsoleCP(65001);
-    SetConsoleOutputCP(65001);
+    system("chcp 1251 & cls");
 
-    cout << "Ð Ð¾Ð·Ñ€Ð¾Ð±Ð½Ð¸Ðº: Ð”ÐµÑ€ÐµÐ²'ÑÐ½ÐºÐ¾ ÐžÐ»ÐµÐºÑÐ°Ð½Ð´Ñ€ Ð¡ÐµÑ€Ð³Ñ–Ð¹Ð¾Ð²Ð¸Ñ‡ Â© " << endl;
-    cout << "ÐÐ°Ð·Ð²Ð° Ð—Ð’Ðž: Ð¦ÐµÐ½Ñ‚Ñ€Ð°Ð»ÑŒÐ½Ð¾ÑƒÐºÑ€Ð°Ñ—Ð½ÑÑŒÐºÐ¸Ð¹ Ð½Ð°Ñ†Ñ–Ð¾Ð½Ð°Ð»ÑŒÐ½Ð¸Ð¹ Ñ‚ÐµÑ…Ð½Ñ–Ñ‡Ð½Ð¸Ð¹ ÑƒÐ½Ñ–Ð²ÐµÑ€ÑÐ¸Ñ‚ÐµÑ‚" << endl;
-    cout << "Ð Ñ–Ðº Ñ€ÐµÐ°Ð»Ñ–Ð·Ð°Ñ†Ñ–Ñ— Ð¿Ñ€Ð¾ÐµÐºÑ‚Ñƒ: 2021" << endl;
-    cout << "Ð’ÐµÑ€ÑÑ–Ñ: 1.0" << endl;
+    cout << "Ðîçðîáíèê: Äåðåâ'ÿíêî Îëåêñàíäð Ñåðã³éîâè÷ © " << endl;
+    cout << "Íàçâà ÇÂÎ: Öåíòðàëüíîóêðà¿íñüêèé íàö³îíàëüíèé òåõí³÷íèé óí³âåðñèòåò" << endl;
+    cout << "Ð³ê ðåàë³çàö³¿ ïðîåêòó: 2021" << endl;
+    cout << "Âåðñ³ÿ: 1.0" << endl;
 
     double x;
     double y;
     double z;
     char a;
     char b;
-    cout << "Ð£Ð²ÐµÐ´Ñ–Ñ‚ÑŒ x: " << endl;
+    cout << "Óâåä³òü x: " << endl;
     cin >> x;
-    cout << "Ð£Ð²ÐµÐ´Ñ–Ñ‚ÑŒ y: " << endl;
+    cout << "Óâåä³òü y: " << endl;
     cin >> y;
-    cout << "Ð£Ð²ÐµÐ´Ñ–Ñ‚ÑŒ z: " << endl;
+    cout << "Óâåä³òü z: " << endl;
     cin >> z;
-    cout << "Ð£Ð²ÐµÐ´Ñ–Ñ‚ÑŒ a: " << endl;
+    cout << "Óâåä³òü a: " << endl;
     cin >> a;
-    cout << "Ð£Ð²ÐµÐ´Ñ–Ñ‚ÑŒ b: " << endl;
+    cout << "Óâåä³òü b: " << endl;
     cin >> b;
 
     cout << "a + 1 == b + 2: " << boolalpha << (a + 1 == b + 2) << endl;
-    cout << "x Ñƒ Ð´ÐµÑÑÑ‚ÐºÐ¾Ð²Ñ–Ð¹ - " << dec << x << endl;
-    cout << "x Ñƒ ÑˆÑ–ÑÑ‚Ð½Ð°Ð´Ñ†ÑÑ‚ÐºÐ¾Ð²Ñ–Ð¹ - " << hex << (int) x << endl;
-    cout << "y Ñƒ Ð´ÐµÑÑÑ‚ÐºÐ¾Ð²Ñ–Ð¹ - " << dec << y << endl;
-    cout << "y Ñƒ ÑˆÑ–ÑÑ‚Ð½Ð°Ð´Ñ†ÑÑ‚ÐºÐ¾Ð²Ñ–Ð¹ - " << hex << (int) y << endl;
-    cout << "z Ñƒ Ð´ÐµÑÑÑ‚ÐºÐ¾Ð²Ñ–Ð¹ - " << dec << z << endl;
-    cout << "z Ñƒ ÑˆÑ–ÑÑ‚Ð½Ð°Ð´Ñ†ÑÑ‚ÐºÐ¾Ð²Ñ–Ð¹ - " << hex << (int) z << endl;
+    cout << "x ó äåñÿòêîâ³é - " << dec << x << endl;
+    cout << "x ó ø³ñòíàäöÿòêîâ³é - " << hex << (int) x << endl;
+    cout << "y ó äåñÿòêîâ³é - " << dec << y << endl;
+    cout << "y ó ø³ñòíàäöÿòêîâ³é - " << hex << (int) y << endl;
+    cout << "z ó äåñÿòêîâ³é - " << dec << z << endl;
+    cout << "z ó ø³ñòíàäöÿòêîâ³é - " << hex << (int) z << endl;
     cout << "S = " << s_calculate(x, y, z) << endl;
 
     system("pause");
