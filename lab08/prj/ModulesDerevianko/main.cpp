@@ -14,7 +14,7 @@ int sumToPay(int input) {
     } else if (input >= 208 && input < 500) {
         return input * 1788;
     } else {
-        return 3645;
+        return input * 3645;
     }
 }
 
@@ -95,7 +95,7 @@ double centemetrToBritishSize(double input) {
         return 9.0;
     } else if (input > 27.5 && input <= 28.0) {
         return 9.5;
-    } else if (input > 28.0 && input <= 29.5) {
+    } else if (input > 28.0 && input <= 28.5) {
         return 10.0;
     } else if (input > 28.5 && input <= 29.0) {
         return 11.0;
