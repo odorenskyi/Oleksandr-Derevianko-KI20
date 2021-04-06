@@ -1,41 +1,49 @@
 #include <iostream>
 #include <windows.h>
+#include <clocale>
+#include <wchar.h>
+#include <fcntl.h>
+#include <iomanip>
+#include <io.h>
 #include "../ModulesDerevianko/ModulesDerevianko.h"
 
 using namespace std;
 
+void localisation() {
+    _wsetlocale(LC_ALL,L" ");
+    _setmode(_fileno(stdout), _O_U8TEXT);
+}
+
 int main()
 {
-    system("chcp 866 & cls");
+    localisation();
 
-    cout << "Розробник: Дерев'янко Олександр Сергійович © " << endl;
-    cout << "Назва ЗВО: Центральноукраїнський національний технічний університет" << endl;
-    cout << "Рік реалізації проекту: 2021" << endl;
-    cout << "Версія: 1.0" << endl;
+    wcout << (L" Дерев'янко Олександр Сергійович. ЦНТУ. 2021 рiк. ©") << endl;
 
     double x;
     double y;
     double z;
     char a;
     char b;
-    cout << "Уведіть x: " << endl;
+
+    wcout << L"Уведіть x: ";
     cin >> x;
-    cout << "Уведіть y: " << endl;
+    wcout << L"Уведiть y: ";
     cin >> y;
-    cout << "Уведіть z: " << endl;
+    wcout << L"Уведiть z: ";
     cin >> z;
-    cout << "Уведіть a: " << endl;
+    wcout << L"Уведіть a: ";
     cin >> a;
-    cout << "Уведіть b: " << endl;
+    wcout << L"Уведіть b: ";
     cin >> b;
 
-    cout << "a + 1 == b + 2: " << boolalpha << (a + 1 == b + 2) << endl;
-    cout << "x у десятковій - " << dec << x << endl;
-    cout << "x у шістнадцятковій - " << hex << (int) x << endl;
-    cout << "y у десятковій - " << dec << y << endl;
-    cout << "y у шістнадцятковій - " << hex << (int) y << endl;
-    cout << "z у десятковій - " << dec << z << endl;
-    cout << "z у шістнадцятковій - " << hex << (int) z << endl;
+    wcout << L"a + 1 == b + 2: " << boolalpha << (a + 1 == b + 2) << endl;
+    wcout << L"x у десятковiй системi =" << dec << x << endl;
+    wcout << L"x у шiстнадцятковiй системi = " << hex << (int) x << endl;
+    wcout << L"y у десятковiй системi = " << dec << y << endl;
+    wcout << L"y у шiстнадцятковiй системi = " << hex << (int) y << endl;
+    wcout << L"z у десятковiй системi = " << dec << z << endl;
+    wcout << L"z у шiстнадцятковiй системi =  " << hex << (int) z << endl;
     cout << "S = " << s_calculate(x, y, z) << endl;
 
     system("pause");
