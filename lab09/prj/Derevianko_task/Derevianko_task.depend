@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1617696371 source:c:\code\c++\oleksandr-derevianko-ki20\lab09\prj\derevianko_task\main.cpp
+	<iostream>
+	<windows.h>
+	<clocale>
+	<wchar.h>
+	<fcntl.h>
+	<iomanip>
+	<io.h>
+	"..\..\..\lab08\prj\ModulesDerevianko\ModulesDerevianko.h"
+
+1617625753 c:\code\c++\oleksandr-derevianko-ki20\lab08\prj\modulesderevianko\modulesderevianko.h
+
