@@ -10,7 +10,7 @@
 using namespace std;
 
 void localisation() {
-    _wsetlocale(LC_ALL,L" ");
+    _wsetlocale(LC_ALL,L"uk_UA.UTF-8");
     _setmode(_fileno(stdout), _O_U8TEXT);
 }
 
