@@ -18,7 +18,7 @@ int main()
 {
     localisation();
 
-    wcout << (L" Дерев'янко Олександр Сергійович. ЦНТУ. 2021 рiк. ©") << endl;
+    wcout << (L" Дерев'янко Олександр Сергiйович. ЦНТУ. 2021 рiк. ©") << endl;
 
     double x;
     double y;
@@ -26,15 +26,15 @@ int main()
     char a;
     char b;
 
-    wcout << L"Уведіть x: ";
+    wcout << L"Уведiть x: ";
     cin >> x;
     wcout << L"Уведiть y: ";
     cin >> y;
     wcout << L"Уведiть z: ";
     cin >> z;
-    wcout << L"Уведіть a: ";
+    wcout << L"Уведiть a: ";
     cin >> a;
-    wcout << L"Уведіть b: ";
+    wcout << L"Уведiть b: ";
     cin >> b;
 
     wcout << L"a + 1 == b + 2: " << boolalpha << (a + 1 == b + 2) << endl;
@@ -44,7 +44,12 @@ int main()
     wcout << L"y у шiстнадцятковiй системi = " << hex << (int) y << endl;
     wcout << L"z у десятковiй системi = " << dec << z << endl;
     wcout << L"z у шiстнадцятковiй системi =  " << hex << (int) z << endl;
-    cout << "S = " << s_calculate(x, y, z) << endl;
+
+    if (y == 0.0) {
+        wcout << L"Дiлення на 0" << endl;
+    } else {
+        wcout << L"S = " << s_calculate(x, y, z) << endl;
+    }
 
     system("pause");
     return 0;
