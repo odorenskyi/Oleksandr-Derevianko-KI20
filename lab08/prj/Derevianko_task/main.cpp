@@ -28,8 +28,15 @@ int main()
 
     wcout << L"Уведiть x: ";
     cin >> x;
-    wcout << L"Уведiть y: ";
-    cin >> y;
+    do {
+        wcout << L"Уведiть y: ";
+        cin >> y;
+
+        if (y == 0) {
+            wcout << L"Y повинно бути бiльше 0" << endl;
+        }
+    } while (y == 0);
+
     wcout << L"Уведiть z: ";
     cin >> z;
     wcout << L"Уведiть a: ";
@@ -45,11 +52,8 @@ int main()
     wcout << L"z у десятковiй системi = " << dec << z << endl;
     wcout << L"z у шiстнадцятковiй системi =  " << hex << (int) z << endl;
 
-    if (y == 0.0) {
-        wcout << L"Дiлення на 0" << endl;
-    } else {
-        wcout << L"S = " << s_calculate(x, y, z) << endl;
-    }
+
+    wcout << L"S = " << s_calculate(x, y, z) << endl;
 
     system("pause");
     return 0;
