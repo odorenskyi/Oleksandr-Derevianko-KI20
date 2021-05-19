@@ -117,21 +117,23 @@ double centemetrToBritishSize(double input) {
 }
 
 int countNumber(int number) {
-    int mask = 0b00000000000000000000000000000001;
-    int d11 = 0b00000000000000000000010000000000;
-    int amount = 0;
-    bool countZeros = number & d11;
+    int mask = 1;
+    int mask_2 = 1;
 
-    for (int i = 0; i < 32; i++) {
-        bool isOne = number & mask;
-        if (countZeros && !isOne) {
-            amount++;
-        }
-        if (!countZeros && isOne) {
-            amount++;
-        }
-        mask = mask << 1;
+    int BinOne = 0;
+    int BinZero = 0;
+
+    for(int i = 0; i < (log2(number)); i++){
+        if(!(number & mask))
+            BinZero++;
+        else
+            BinOne++;
+        mask<<=1;
     }
 
-    return amount;
+    if(!(number & (mask_2 << 11))){
+        return BinZero;
+    }else{
+        return BinOne;
+    }
 }
