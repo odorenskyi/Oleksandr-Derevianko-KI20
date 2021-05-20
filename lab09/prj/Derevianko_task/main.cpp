@@ -67,7 +67,7 @@ void function93() {
         wcout << L"Уведiть число: " << endl;
         cin >> input;
         if (input >= 0) {
-            if (!(input & (1 << 11))) {
+            if (!(input & 1024)) {
                 wcout << L"Число двiйкових нулiв - " << countNumber(input) << endl;
             } else {
                 wcout << L"Число двiйкових одиниць - " << countNumber(input) << endl;
@@ -75,7 +75,7 @@ void function93() {
         } else {
             wcout << L"Число повинно бути бiльше 0" << endl;
         }
-    } while (input < 0);
+    } while (input <= 0);
 
 }
 

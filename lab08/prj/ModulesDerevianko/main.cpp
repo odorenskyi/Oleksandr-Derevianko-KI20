@@ -12,9 +12,12 @@ int sumToPay(int input) {
     if (input < 208) {
         return input * 1299;
     } else if (input >= 208 && input < 500) {
-        return input * 1788;
+        int partialResult = (input - 208) * 1788;
+        return (208 * 1299) + partialResult;
     } else {
-        return input * 3645;
+        int partialResult = (input - 500) * 3645;
+
+        return (208 * 1299) + (296 * 1788) + partialResult;
     }
 }
 
@@ -117,21 +120,23 @@ double centemetrToBritishSize(double input) {
 }
 
 int countNumber(int number) {
+    int original = number;
     int mask = 1;
     int mask_2 = 1;
 
     int BinOne = 0;
     int BinZero = 0;
 
-    for(int i = 0; i < (log2(number)); i++){
-        if(!(number & mask))
+    do {
+        if (number % 2 == 0) {
             BinZero++;
-        else
+        } else {
             BinOne++;
-        mask<<=1;
-    }
+        }
+        number /= 2;
+    } while (number != 0);
 
-    if(!(number & (mask_2 << 11))){
+    if(!(original & 1024)){
         return BinZero;
     }else{
         return BinOne;
