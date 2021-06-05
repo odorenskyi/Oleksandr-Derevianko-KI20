@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Code/C++/Oleksandr-Derevianko-KI20/lab08/prj/ModulesDerevianko/ModulesDerevianko.h
+
+C:/Code/C++/Oleksandr-Derevianko-KI20/lab10/prj/TestSuite/main.cpp
+math.h
+-
+ModulesDerevianko.h
+C:/Code/C++/Oleksandr-Derevianko-KI20/lab10/prj/TestSuite/ModulesDerevianko.h
+iostream
+-
+cstdlib
+-
+fstream
+-
+wchar.h
+-
+fcntl.h
+-
+codecvt
+-
+clocale
+-
+sstream
+-
+chrono
+-
+bitset
+-
+

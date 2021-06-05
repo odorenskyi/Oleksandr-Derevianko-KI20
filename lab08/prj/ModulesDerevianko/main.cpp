@@ -1,5 +1,12 @@
 #include <iostream>
 #include <cmath>
+#include <fstream>
+#include <wchar.h>
+#include <random>
+#include <chrono>
+#include <codecvt>
+#include <locale>
+#include <bitset>
 
 using namespace std;
 
@@ -141,4 +148,75 @@ int countNumber(int number) {
     }else{
         return BinOne;
     }
+}
+
+void task101(char *inputFile, char *outputFile) {
+    string originalText = "Як парость виноградної лози, плекайте мову.\n"
+                          "Пильно й ненастанно політь бур'ян.\n"
+                          "Чистіша від сльози вона хай буде.\n"
+                          "Вірно і слухняно незай вона щоразу служить вам,\n"
+                          "Хоч і живе своїм живим життям.";
+
+
+    fstream appendFileToWorkWith;
+    appendFileToWorkWith.open(outputFile, std::fstream::in | std::fstream::out | std::fstream::trunc);
+    string s = "Розробник: Дерев'янко О.С.\nУстанова: ЦНТУ\nМісто: Кропивницький\nКраїна: Україна\nРік розробки: 2021";
+
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    std::default_random_engine generator(seed);
+    std::uniform_int_distribution<int> distribution(10,100);
+
+    s = s + "\nРандомне число: " + to_string(distribution(generator));
+
+    fstream newfile;
+    newfile.open(inputFile,ios::in); //open a file to perform read operation using file object
+
+    string fromFile;
+    if (newfile.is_open()) {   //checking whether the file is open
+        string tp;
+        while (!newfile.eof()) {
+            getline(newfile, tp);
+            fromFile += tp + "\n";
+        }
+        newfile.close();   //close the file object.
+    }
+
+    bool result = true;
+    for (int i = 0; i < originalText.length(); i++) {
+        if (fromFile[i] != originalText[i]) {
+            result = false;
+        }
+    }
+
+    s += result ? "\nТекст у вхідному не має пуктуаційних помилок" : "\nТекст у вхідному файлі має пунктуаційні помилки";
+
+    appendFileToWorkWith << s;
+    appendFileToWorkWith.close();
+}
+
+void task102(char inputFile[]) {
+    ofstream outfile;
+    outfile.open(inputFile, std::ios_base::app); // append instead of overwrite
+    time_t t = time(0);
+    char *date = ctime(&t);
+    string time = date;
+    string alphabet = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
+
+    if (outfile.is_open()) {
+        outfile << endl << time << alphabet << endl;
+        outfile.close();
+    }
+}
+
+void task103(char outputFile[], double x, double y, double z, int b) {
+    fstream appendFileToWorkWith;
+    appendFileToWorkWith.open(outputFile, std::fstream::in | std::fstream::out | std::fstream::app);
+    string s;
+
+    s += "\ns_calculation: " + to_string(s_calculate(x, y, z));
+    s += "\nb у бінарній формі: ";
+
+    appendFileToWorkWith << s;
+    appendFileToWorkWith << bitset<32>(b);
+    appendFileToWorkWith.close();
 }

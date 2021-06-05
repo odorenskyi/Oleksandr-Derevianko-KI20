@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Code/C++/Oleksandr-Derevianko-KI20/lab08/prj/ModulesDerevianko/main.cpp
+iostream
+-
+cmath
+-
+fstream
+-
+wchar.h
+-
+random
+-
+chrono
+-
+codecvt
+-
+locale
+-
+bitset
+-
+

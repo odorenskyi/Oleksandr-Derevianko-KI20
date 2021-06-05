@@ -1,0 +1,3 @@
+C:/Code/C++/Oleksandr-Derevianko-KI20/lab08/prj/ModulesDerevianko/build/CMakeFiles/ModulesDerevianko.dir
+C:/Code/C++/Oleksandr-Derevianko-KI20/lab08/prj/ModulesDerevianko/build/CMakeFiles/edit_cache.dir
+C:/Code/C++/Oleksandr-Derevianko-KI20/lab08/prj/ModulesDerevianko/build/CMakeFiles/rebuild_cache.dir
