@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Code/C++/Oleksandr-Derevianko-KI20/lab10/prj/Derevianko_task/main.cpp" "C:/Code/C++/Oleksandr-Derevianko-KI20/lab10/prj/Derevianko_task/build/CMakeFiles/Derevianko_task.dir/main.cpp.obj"
+  "/cygdrive/c/Code/C++/Oleksandr-Derevianko-KI20/lab10/prj/Derevianko_task/main.cpp" "/cygdrive/c/Code/C++/Oleksandr-Derevianko-KI20/lab10/prj/Derevianko_task/build/CMakeFiles/Derevianko_task.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Derevianko_task.dir/main.cpp.obj"
+  "CMakeFiles/Derevianko_task.dir/main.cpp.o"
   "Derevianko_task.exe"
-  "Derevianko_task.exe.manifest"
   "Derevianko_task.pdb"
   "libDerevianko_task.dll.a"
 )
