@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1623939935 source:c:\code\c++\oleksandr-derevianko-ki20\lab11\prj\dereviankokavalevzobenko_task\main.cpp
+1624007082 source:c:\code\c++\oleksandr-derevianko-ki20\lab11\prj\dereviankokavalevzobenko_task\main.cpp
 	<iostream>
 	<list>
 	<bits/stdc++.h>

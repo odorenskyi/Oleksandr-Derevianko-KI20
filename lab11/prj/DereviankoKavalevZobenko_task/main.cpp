@@ -102,39 +102,42 @@ string wstringToString(wstring s) {
 
 void finishWork(list<Index> *List, wstring ouputFile) {
     list<Index>::iterator it;
-    fstream appendFileToWorkWith;
-    appendFileToWorkWith.open(wstringToString(ouputFile),  fstream::in | fstream::out | fstream::trunc);
+    wofstream appendFileToWorkWith;
+    appendFileToWorkWith.open(wstringToString(ouputFile), ios_base::trunc);
+    appendFileToWorkWith.imbue(locale(locale(), new codecvt_utf8_utf16<wchar_t>));
+
 
     for (it = List->begin(); it != List->end(); it++) {
-        appendFileToWorkWith << wstringToString(it->toString()) << "\n";
+        appendFileToWorkWith << it->toString() << "\n";
     }
 }
 
 list<Index> readFile(wstring file, list<Index> indexList) {
-    ifstream reader;
+    wifstream reader;
     reader.open(wstringToString(file));
+    reader.imbue(locale(locale(), new codecvt_utf8_utf16<wchar_t>));
     wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
 
     if (reader.is_open()) {
-        string s;
+        wstring s;
         while(getline(reader, s)){
-            stringstream ss(s);
-            string word;
-            vector<string> strings;
+            wstringstream ss(s);
+            wstring word;
+            vector<wstring> strings;
             for (int i = 0; ss >> word; i++) {
                 strings.push_back(word);
             }
 
-            string vpz;
+            wstring vpz;
             for (int i = 4; i < strings.size(); i++) {
-                vpz += strings[i] + " ";
+                vpz += strings[i] + L" ";
             }
 
-            Index index(converter.from_bytes(strings[0]),
-                        converter.from_bytes(strings[1]),
-                        converter.from_bytes(strings[2]),
-                        converter.from_bytes(strings[3]),
-                        converter.from_bytes(vpz));
+            Index index(strings[0],
+                        strings[1],
+                        strings[2],
+                        strings[3],
+                        vpz);
             indexList.push_back(index);
         }
 
@@ -222,7 +225,7 @@ list<Index> addNewIndex(list<Index> indexes) {
     wcout << L"Уведіть район: " << endl;
     wcin >> locality;
     wcout << L"Уведіть впз: " << endl;
-    wcin.ignore();
+    fflush(stdin);
     getline(wcin, vpz);
 
     Index object(index, city, area, locality, vpz);
@@ -257,7 +260,11 @@ list<Index> remove(list<Index> indexes) {
 
 void localisation() {
     _wsetlocale(LC_ALL, L"uk_UA.UTF-8");
-    _setmode(fileno(stdout), _O_U8TEXT);
+    _setmode(_fileno(stdout), _O_U16TEXT);
+    _setmode(_fileno(stdin), _O_U16TEXT);
+//    _wsetlocale(LC_ALL, L"uk_UA.UTF-8");
+//    _setmode(_fileno(stdout), _O_U16TEXT);
+//    _setmode(_fileno(stdin), _O_U16TEXT);
 }
 
 int main() {
@@ -265,7 +272,7 @@ int main() {
 
     localisation();
 
-    char input = 0;
+    wchar_t input = 0;
     wstring fileName;
     wcout << L"Уведіть назву файлу який будемо читати: " << endl;
     wcin >> fileName;
@@ -275,18 +282,18 @@ int main() {
 
         wcout << L"Уведiть \"u\" – для виведення данних із файлу, \"t\" – для додання нового запису, " << endl;
         wcout << L"\"r\" – для пошуку по файлу, \"e\" - для видалення запису із файла" << endl;
-        cin >> input;
+        wcin >> input;
 
         if (input == 'u') {
             sout(indexes);
 
             wcout << L"Для виходу уведiть \"w\"  або \"i\":" << endl;
-            cin >> input;
+            wcin >> input;
         } else if (input == 't') {
             indexes = addNewIndex(indexes);
 
             wcout << L"Для виходу уведiть \"w\" або \"i\":" << endl;
-            cin >> input;
+            wcin >> input;
         } else if (input == 'r') {
             Index index = search(indexes);
             Index empty(L"", L"", L"", L"", L"");
@@ -298,12 +305,12 @@ int main() {
             }
 
             wcout << L"Для виходу уведiть \"w\"  або \"i\":" << endl;
-            cin >> input;
+            wcin >> input;
         } else if (input == 'e') {
             indexes = remove(indexes);
 
             wcout << L"Для виходу уведiть \"w\"  або \"i\":" << endl;
-            cin >> input;
+            wcin >> input;
         } else if (input != 'w' && input != 'i') {
             Beep(523, 500);
             wcout << L"Не вiрний ввод" << endl;
