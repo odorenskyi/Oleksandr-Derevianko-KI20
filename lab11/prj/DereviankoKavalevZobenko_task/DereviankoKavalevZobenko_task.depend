@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1623939935 source:c:\code\c++\oleksandr-derevianko-ki20\lab11\prj\dereviankokavalevzobenko_task\main.cpp
+	<iostream>
+	<list>
+	<bits/stdc++.h>
+	<codecvt>
+	<locale>
+	<iostream>
+	<windows.h>
+	<clocale>
+	<wchar.h>
+	<fcntl.h>
+	<iomanip>
+	<io.h>
+	<fcntl.h>
+	<io.h>
+	<stdio.h>
+
